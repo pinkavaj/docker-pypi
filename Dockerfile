@@ -2,8 +2,8 @@ FROM alpine:3.7
 MAINTAINER Josh VanderLinden <codekoala@gmail.com>
 
 RUN apk update && \
-    apk add py-pip && \
-    pip install --upgrade pip && \
+    apk add py3-pip && \
+    pip3 install --upgrade pip && \
     mkdir -p /srv/pypi
 
 # Install packages wich have build dependencies, remove them after installation
@@ -12,7 +12,7 @@ RUN apk add --no-cache --virtual .build-deps \
         gcc \
         libc-dev \
         libffi-dev \
-        python-dev && \
+        python3-dev && \
     pip install bcrypt && \
     apk del --no-cache .build-deps
 

@@ -16,7 +16,7 @@ RUN apk add --no-cache --virtual .build-deps \
     pip install bcrypt && \
     apk del --no-cache .build-deps
 
-RUN pip install -U passlib pypiserver[cache]==1.2.1
+RUN pip install -U passlib pypiserver[cache]==1.3.1
 
 EXPOSE 80
 VOLUME ["/srv/pypi"]
